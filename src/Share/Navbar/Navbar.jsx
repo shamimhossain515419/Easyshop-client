@@ -82,7 +82,7 @@ const Navbar = () => {
                               <div>
                                    {
                                         user ? <div className=' flex items-center gap-3 m-2'>
-                                             <Link href={'/'} className=' mx-3'>
+                                             <Link href={'/dashboard/addcard'} className=' mx-3'>
                                                   <span className="relative inline-block">
                                                        <AiFillShopping className='  text-4xl relative ' size={34}></AiFillShopping>
                                                        <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">{order?.length}</span>
