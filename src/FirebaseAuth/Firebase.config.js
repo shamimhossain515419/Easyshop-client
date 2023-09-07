@@ -1,18 +1,15 @@
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
 const firebaseConfig = {
-  apiKey: "AIzaSyAGe4ejlD4wIxouQi_m-dloKAW4qA-zi-4",
-  authDomain: "easyshop-e6d52.firebaseapp.com",
-  projectId: "easyshop-e6d52",
-  storageBucket: "easyshop-e6d52.appspot.com",
-  messagingSenderId: "460932676599",
-  appId: "1:460932676599:web:2cfdc464c04e0a6e708cf2",
-  measurementId: "G-BEG29GTNQP"
+  apiKey: "AIzaSyAO7CdRnnaLI_XRE6UMbANOlCTePN0DKgY",
+  authDomain: "easyshop2-1962c.firebaseapp.com",
+  projectId: "easyshop2-1962c",
+  storageBucket: "easyshop2-1962c.appspot.com",
+  messagingSenderId: "161212414617",
+  appId: "1:161212414617:web:4f650b5bf76f162a155608",
+  measurementId: "G-74MJXVL8XM"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export default app;

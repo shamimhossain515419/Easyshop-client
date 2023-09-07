@@ -1,55 +1,38 @@
 "use client"
 
-
-
 import { AuthContext } from '@/Component/AuthProvider/Authprovider';
 import Container from '@/Component/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import React, { useState, startTransition } from 'react';
+import React, { useContext, useState, } from 'react';
 import { useEffect } from 'react';
-import { useContext } from 'react';
-import { toast } from 'react-hot-toast';
 import { AiFillShopping, AiOutlineHome, AiOutlineSetting } from 'react-icons/ai';
 import { FiLogIn } from 'react-icons/fi';
 
 const Navbar = () => {
      const [isOpen, setIsOpen] = useState(false);
-     const { LogOut, user } = useContext(AuthContext);
+     const { user, LogOut } = useContext(AuthContext);
      const [Open, setOpen] = useState(false)
      const [order, setOrder] = useState(false)
-     const { replace, refresh } = useRouter();
-     const path = usePathname();
 
+     const { replace, refresh } = useRouter();
 
 
      useEffect(() => {
           fetch(`https://esayshop-server.vercel.app/addcard/${user?.email}`).then(res => res.json()).then(data => setOrder(data))
 
      })
- 
-     
 
      const handleLogout = async () => {
           await LogOut();
-          const res = await fetch("/api/auth/logout", {
-               method: "POST",
-          });
-          await res.json();
 
-          if (path.includes("/dashboard") || path.includes("/profile")) {
-               replace(`/`);
-          }
           replace('/')
           toast.success('Successfully Login!');
-          startTransition(() => {
-               refresh();
-          });
-
 
      }
+
 
      return (
 
@@ -88,10 +71,10 @@ const Navbar = () => {
                                    <Link href={'/shop'} className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
                                         Shop
                                    </Link>
-                                   <Link href="/services" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+                                   <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
                                         Services
                                    </Link>
-                                   <Link href="/contact" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+                                   <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
                                         Contact
                                    </Link>
 
@@ -99,7 +82,7 @@ const Navbar = () => {
                               <div>
                                    {
                                         user ? <div className=' flex items-center gap-3 m-2'>
-                                             <Link href={'/dashboard/addcard'} className=' mx-3'>
+                                             <Link href={'/'} className=' mx-3'>
                                                   <span className="relative inline-block">
                                                        <AiFillShopping className='  text-4xl relative ' size={34}></AiFillShopping>
                                                        <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">{order?.length}</span>

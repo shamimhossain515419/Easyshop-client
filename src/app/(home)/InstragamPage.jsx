@@ -4,6 +4,10 @@ import { BsInstagram } from 'react-icons/bs';
 import Link from 'next/link';
 import Image from 'next/image';
 import Container from '@/Component/Container';
+import img1 from '../../../public/emotional-young-blonde-woman-pointing-you_171337-2796.webp'
+import img2 from '../../../public/happy-woman-listening-music_23-2148547515.webp'
+import img3 from '../../../public/smiling-woman-with-smart-watch_1301-1696.webp'
+import img4 from '../../../public/winner-portrait-woman-tightens-her-fist-looking-camera_979672-2460.webp'
 
 
 const InstragramPage = () => {
@@ -23,7 +27,7 @@ const InstragramPage = () => {
                          </div>
                          <div className=' grid md:grid-cols-2 gap-4'>
                               <Link className='h-[400px] imageInstragram overflow-hidden  relative ' href={'https://www.instagram.com/hmdshamim798/'}>
-                                   <Image  width={400} height={400}   className='duration-300   scale-110 relative h-[400px]  ' src="https://img.freepik.com/premium-photo/winner-portrait-woman-tightens-her-fist-looking-camera_979672-2460.jpg?w=900" alt="" />
+                                   <Image  width={400} height={400}   className='duration-300   scale-110 relative h-[400px]  ' src={img2} alt="" />
                                    <div className=' bgbox  hidden duration-300  top-0 left-0  h-full absolute w-full  hover:bg-[#0d0c0c9d]'>
                                         <div className=' h-[400px] duration-100  flex justify-center items-center'>
                                              <BsInstagram size={24} className='  text-white '></BsInstagram>
@@ -31,7 +35,15 @@ const InstragramPage = () => {
                                    </div>
                               </Link>
                               <Link className='h-[400px] imageInstragram overflow-hidden  relative ' href={'https://www.instagram.com/hmdshamim798/'}>
-                                   <Image  width={400} height={400}   className='duration-300  scale-110 relative h-[400px]  ' src="https://img.freepik.com/free-photo/emotional-young-blonde-woman-pointing-you_171337-2796.jpg?w=1380&t=st=1693323912~exp=1693324512~hmac=79995da9db6d8bdc4782dbf3900f4aeb8700fc5b02b4e1787812dc5df81798af" alt="" />
+                                   <Image  width={400} height={400}   className='duration-300  scale-110 relative h-[400px]  ' src={img1} alt="" />
+                                   <div className=' bgbox  hidden duration-300  top-0 left-0  h-full absolute w-full  hover:bg-[#0d0c0c9d]'>
+                                        <div className=' h-[400px] duration-100  flex justify-center items-center'>
+ 
+                                        </div>
+                                   </div>
+                              </Link>
+                              <Link className='h-[400px] imageInstragram overflow-hidden  relative ' href={'https://www.instagram.com/hmdshamim798/'}>
+                                   <Image width={400} height={400}    className='duration-300  scale-110 relative h-[400px]  ' src={img3} alt="" />
                                    <div className=' bgbox  hidden duration-300  top-0 left-0  h-full absolute w-full  hover:bg-[#0d0c0c9d]'>
                                         <div className=' h-[400px] duration-100  flex justify-center items-center'>
                                              <BsInstagram size={24} className='  text-white '></BsInstagram>
@@ -39,15 +51,7 @@ const InstragramPage = () => {
                                    </div>
                               </Link>
                               <Link className='h-[400px] imageInstragram overflow-hidden  relative ' href={'https://www.instagram.com/hmdshamim798/'}>
-                                   <Image width={400} height={400}    className='duration-300  scale-110 relative h-[400px]  ' src="https://Image.freepik.com/free-photo/smiling-woman-with-smart-watch_1301-1696.jpg?w=1380&t=st=1692729353~exp=1692729953~hmac=e4f359aa3c7885faf8e92874403df826601d7e745e763999e9cefc9c922b16a4" alt="" />
-                                   <div className=' bgbox  hidden duration-300  top-0 left-0  h-full absolute w-full  hover:bg-[#0d0c0c9d]'>
-                                        <div className=' h-[400px] duration-100  flex justify-center items-center'>
-                                             <BsInstagram size={24} className='  text-white '></BsInstagram>
-                                        </div>
-                                   </div>
-                              </Link>
-                              <Link className='h-[400px] imageInstragram overflow-hidden  relative ' href={'https://www.instagram.com/hmdshamim798/'}>
-                                   <Image width={400} height={400}    className='  duration-300  scale-110 relative h-[400px]  ' src="https://Image.freepik.com/free-photo/happy-woman-listening-music_23-2148547515.jpg?w=826&t=st=1692729325~exp=1692729925~hmac=ba70dc345e650364cc5a1f117f7ed452c60984c9f68c89bda5f7ca9110290bbe" alt="" />
+                                   <Image width={400} height={400}    className='  duration-300  scale-110 relative h-[400px]  ' src={img4} alt="" />
                                    <div className=' bgbox  hidden duration-300  top-0 left-0  h-full absolute w-full  hover:bg-[#0d0c0c9d]'>
                                         <div className=' h-[400px] duration-100  flex justify-center items-center'>
                                              <BsInstagram size={24} className='  text-white '></BsInstagram>

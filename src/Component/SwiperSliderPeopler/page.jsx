@@ -13,7 +13,7 @@ import ReactStars from 'react-stars'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 
-export default function PeoplerPage() {
+export default function PeoplerSinglePage() {
      return (
           <>
                <Swiper
