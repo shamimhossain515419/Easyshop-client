@@ -6,6 +6,7 @@ import Loading from '@/Component/Loading/Loading';
 
 import axios from 'axios';
 import Image from 'next/image';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -17,12 +18,13 @@ const AddCardPage = () => {
      const [price, setPrice] = useState(0)
      const [Fee, setFee] = useState(0)
      const [discount, setDiscount] = useState(0);
-     console.log(user);
+ 
+
      useEffect(() => {
           fetch(`https://esayshop-server.vercel.app/addcard/${user?.email}`).then(res => res.json()).then(data => setOrder(data))
 
      },);
-    
+
      const handleDelete = (id) => {
           console.log(id);
           axios.delete(`https://esayshop-server.vercel.app/addcard/${id}`).then(result => {
@@ -48,6 +50,21 @@ const AddCardPage = () => {
      };
 
      const TotalPrice = price + discount - Fee;
+
+
+     const PaymentData = { price: TotalPrice, email: user?.email, name: user?.displayName }
+     const handlePayment = () => {
+          axios.post('https://esayshop-server.vercel.app/order', PaymentData).then(result => {
+               console.log(result);
+               if(result){
+                    window.location.replace(result?.data?.url)
+               }
+          }).catch(error => {
+               console.log(error);
+          })
+
+     }
+
 
      return (
           <div className=' md:p-3 xl:p-6'>
@@ -109,7 +126,7 @@ const AddCardPage = () => {
                                         <p className=' text-[#ff7d20]'> ${TotalPrice.toFixed(0)}</p>
                                    </div>
 
-                                   <div className=' text-white text-base md:text-xl mt-7  text-center py-2  px-4 rounded-2xl bg-[#3e7ae8]'>Process to checkout</div>
+                                   <div onClick={handlePayment} className=' cursor-pointer text-white text-base md:text-xl mt-7  text-center py-2  px-4 rounded-2xl bg-[#3e7ae8]'>Process to checkout</div>
                               </div>
                          </div></> : <>  <Loading></Loading>  </>
                }
